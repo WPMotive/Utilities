@@ -25,7 +25,7 @@ if (!function_exists('maverick_files')) {
 
                 if ('' !== $file_root) {
                     // if this file in the loop is this file we are now in
-                    if (strpos($include_files, $file_root) !== false) {
+                    if (strpos($include_file, $file_root) !== false) {
                         continue;
                     }
                 }
