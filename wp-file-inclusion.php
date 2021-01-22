@@ -61,15 +61,10 @@ if (!function_exists('maverick_files_v2')) {
             foreach ($include_files as $include_file) {
 
                 // if we have any include files.
-                if (!empty($exclude_files)) {
+                $file_name = wp_basename($include_file);
 
-                    // loop through each file.
-                    foreach ($exclude_files as $exclude_file) {
-
-                        if (strpos($include_file, $exclude_file) !== false) {
-                            continue;
-                        }
-                    }
+                if (in_array($file_name, $exclude_files)) {
+                    continue;
                 }
 
                 // required this file in the theme
